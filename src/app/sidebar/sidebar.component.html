@@ -1,0 +1,54 @@
+<i class="material-icons">local_airport</i>
+<i class="material-icons">home</i>
+
+<div *ngFor="let i of index">
+  
+  <mat-list>
+    <mat-card>
+      {{matches.VisitorAbbreviation[i]}} {{matches.VisitorPoints[i]}} : {{matches.HomePoints[i]}} {{matches.HomeAbbreviation[i]}}
+      <br> {{matches.status[i]}} {{matches.livePcTime[i]}}
+      <br>
+      
+      <table>
+        <tr>
+          <td></td>
+          <td *ngFor="let j of fourElements">
+            Q{{j+1}}
+          </td>
+          <div *ngFor="let k of tenElements">
+            <td *ngIf="matches.HomeOts[i][k] !== 0">
+              OT{{k}}
+            </td>
+          </div>
+        </tr>
+        <tr>
+          <td>
+            {{matches.HomeAbbreviation[i]}}
+          </td>
+          <td *ngFor="let j of fourElements">
+            {{matches.HomeQts[i][j]}}
+          </td>
+          <div *ngFor="let k of tenElements">
+            <td *ngIf="matches.HomeOts[i][k] !== 0">
+              {{matches.HomeOts[i][k]}}
+            </td>
+          </div>
+        </tr>
+        <tr>
+          <td>
+            {{matches.VisitorAbbreviation[i]}}
+          </td>
+          <td *ngFor="let j of fourElements">
+            {{matches.VisitorQts[i][j]}}
+          </td>
+          <div *ngFor="let k of tenElements">
+            <td *ngIf="matches.VisitorOts[i][k] !== 0">
+              {{matches.VisitorOts[i][k]}}
+            </td>
+          </div>
+        </tr>
+      </table>
+    </mat-card>
+  </mat-list>
+  <br>
+</div>
