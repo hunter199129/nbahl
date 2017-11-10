@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build.prod": "ng build --aot --prod --progress false --base-href \"https://hunter199129.github.io/nbahl/\""    
+    "build.prod": "ng build --progress false --base-href \"https://hunter199129.github.io/nbahl/\""    
   },
   "private": true,
   "dependencies": {
