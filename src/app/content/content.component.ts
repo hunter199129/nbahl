@@ -13,6 +13,7 @@ export class ContentComponent implements OnInit {
   form: FormGroup;
   results: any;
   videoId: string;
+  noResult = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,7 +29,14 @@ export class ContentComponent implements OnInit {
 
   submit(value) {
     this.youtubeSearchService.search(this.form.value.teamSelector, this.form.value.channelSelector)
-      .subscribe(res => this.results = res);
+      .subscribe(res => {
+        if (!res.length) {
+          this.noResult = true;
+        } else {
+          this.noResult = false;
+        }
+        this.results = res;
+      });
   }
 
   changeVideo(videoId) {

@@ -10,6 +10,13 @@
 
 <app-youtube-player [vid]="videoId"></app-youtube-player>
 
+<div *ngIf="noResult">
+  <div style="font-size:xx-large; padding-top:1em;">
+    No Result
+  </div>
+</div>
+
+
 <ul>
   <li *ngFor="let video of results" (click)="changeVideo(video.id.videoId)">
     {{ video.snippet.title }}
