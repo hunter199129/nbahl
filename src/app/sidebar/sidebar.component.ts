@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import * as NBA from '../../../node_modules/nba/index.js';
-import * as NBA from '../../nba/index.js';
+import * as NBA from '../../../node_modules/nba/index.js';
 
 import { Matches } from '../matches';
 
