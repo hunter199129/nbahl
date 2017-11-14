@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build.prod": "ng build --progress false --base-href \"https://hunter199129.github.io/nbahl/\""    
+    "build.prod": "ng build --progress false --base-href \"https://hunter199129.github.io/nbahl/\""
   },
   "private": true,
   "dependencies": {
@@ -27,6 +27,7 @@
     "@angular/router": "^4.2.4",
     "core-js": "^2.4.1",
     "nba": "4.0.0",
+    "nba-color": "^1.2.2",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },

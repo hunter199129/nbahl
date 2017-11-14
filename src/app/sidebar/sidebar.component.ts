@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as NBA from '../../../node_modules/nba/index.js';
+import { getMainColor } from '../../../node_modules/nba-color/lib/index';
 
 import { Matches } from '../matches';
 
@@ -16,6 +17,11 @@ export class SidebarComponent {
   index: number[];
   tenElements: number[];
   fourElements: number[];
+
+  test(event) {
+    console.log(getMainColor(event.target.textContent))
+    // console.log((event.target.textContent))
+  }
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {

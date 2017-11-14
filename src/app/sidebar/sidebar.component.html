@@ -5,7 +5,11 @@
   
   <mat-list>
     <mat-card>
-      {{matches.VisitorAbbreviation[i]}} {{matches.VisitorPoints[i]}} : {{matches.HomePoints[i]}} {{matches.HomeAbbreviation[i]}}
+      <span (click)="test($event)">{{matches.VisitorAbbreviation[i]}}</span> 
+      <span>{{matches.VisitorPoints[i]}} 
+      : 
+      {{matches.HomePoints[i]}} </span>
+      <span>{{matches.HomeAbbreviation[i]}}</span>
       <br> {{matches.status[i]}} {{matches.livePcTime[i]}}
       <br>
       
@@ -16,7 +20,7 @@
             Q{{j+1}}
           </td>
           <div *ngFor="let k of tenElements">
-            <td *ngIf="matches.HomeOts[i][k] !== 0">
+            <td *ngIf="matches.HomeOts[i][k] !== 0 && matches.HomeOts[i][k] !== undefined">
               OT{{k}}
             </td>
           </div>
@@ -29,7 +33,7 @@
             {{matches.HomeQts[i][j]}}
           </td>
           <div *ngFor="let k of tenElements">
-            <td *ngIf="matches.HomeOts[i][k] !== 0">
+            <td *ngIf="matches.HomeOts[i][k] !== 0 && matches.HomeOts[i][k] !== undefined">
               {{matches.HomeOts[i][k]}}
             </td>
           </div>
@@ -42,7 +46,7 @@
             {{matches.VisitorQts[i][j]}}
           </td>
           <div *ngFor="let k of tenElements">
-            <td *ngIf="matches.VisitorOts[i][k] !== 0">
+            <td *ngIf="matches.VisitorOts[i][k] !== 0 && matches.VisitorOts[i][k] !== undefined">
               {{matches.VisitorOts[i][k]}}
             </td>
           </div>
