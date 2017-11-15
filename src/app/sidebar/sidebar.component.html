@@ -5,11 +5,11 @@
   
   <mat-list>
     <mat-card>
-      <span (click)="test($event)">{{matches.VisitorAbbreviation[i]}}</span> 
-      <span>{{matches.VisitorPoints[i]}} 
+      <span [ngStyle]="{'background-color': matches.VisitorColor[i], 'color': 'white'}">{{matches.VisitorAbbreviation[i]}}</span> 
+      <span>{{matches.VisitorPoints[i]}}
       : 
       {{matches.HomePoints[i]}} </span>
-      <span>{{matches.HomeAbbreviation[i]}}</span>
+      <span [ngStyle]="{'background-color': matches.HomeColor[i], 'color': 'white'}">{{matches.HomeAbbreviation[i]}}</span>
       <br> {{matches.status[i]}} {{matches.livePcTime[i]}}
       <br>
       

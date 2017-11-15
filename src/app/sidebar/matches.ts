@@ -13,4 +13,7 @@ export class Matches {
     HomeOts: number[];
     VisitorQts: number[];
     VisitorOts: number[];
+    // Color
+    HomeColor: string[];
+    VisitorColor: string[];
 }

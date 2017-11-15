@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as NBA from '../../node_modules/nba/index.js';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
