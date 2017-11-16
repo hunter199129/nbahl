@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
@@ -15,7 +14,6 @@ import { YoutubePlayerComponent } from './youtube-player/youtube-player.componen
 import { StandingsComponent } from './standings/standings.component';
 import { StandingsComponentDialog } from './dialogs/standings-dialog/standings-dialog.component';
 import { StandingsTableComponent } from './dialogs/standings-dialog/standings-table/standings-table.component';
-
 
 @NgModule({
   declarations: [
@@ -36,9 +34,6 @@ import { StandingsTableComponent } from './dialogs/standings-dialog/standings-ta
     MaterialModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-   
-
-
   ],
   entryComponents: [StandingsComponentDialog],
   providers: [],
