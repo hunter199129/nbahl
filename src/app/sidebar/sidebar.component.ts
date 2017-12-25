@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import * as NBA from '../../../node_modules/nba/index.js';
-import { getMainColor } from '../../../node_modules/nba-color/lib/index'; 
 
-import { Matches } from './matches';
-import { get } from 'selenium-webdriver/http';
+import { Matches } from '../matches';
 
 const todayDate = new Date().toISOString().slice(0, 10).replace(/-/g, '/');
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css'],
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
   constructor() { }
@@ -18,6 +16,18 @@ export class SidebarComponent {
   index: number[];
   tenElements: number[];
   fourElements: number[];
+  isActive = false;
+  showMenu = '';
+  eventCalled() {
+      this.isActive = !this.isActive;
+  }
+  addExpandClass(element: any) {
+      if (element === this.showMenu) {
+          this.showMenu = '0';
+      } else {
+          this.showMenu = element;
+      }
+  }
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnInit() {
@@ -46,9 +56,7 @@ export class SidebarComponent {
           }
           return t;
         });
-        this.matches.HomeColor = this.matches.HomeAbbreviation.map(e => getMainColor(e).hex);
-        this.matches.VisitorColor = this.matches.VisitorAbbreviation.map(e => getMainColor(e).hex);
-        
+
         this.index = this.matches.status.map((e, i) => i);
         this.tenElements = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
         this.fourElements = this.tenElements.slice(0, 4);

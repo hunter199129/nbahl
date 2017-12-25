@@ -4,7 +4,7 @@ import { Http, Response } from '@angular/http';
 const BASE_URL = 'https://www.googleapis.com/youtube/v3/search';
 
 // TODO: Change to token with limitation before publish
-const API_TOKEN = 'AIzaSyACneaZIArgKtcggp990jX87w2X8JRkq30';
+const API_TOKEN = 'AIzaSyBTmt_xQa6JkRrCOziAy42zZkYxT_rVWZ8';
 
 
 @Injectable()

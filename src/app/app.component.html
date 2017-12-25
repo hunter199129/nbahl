@@ -1,14 +1,11 @@
-<button (click)="toggleMenu()" class="hamburger">
-  <span>toggle menu</span>
-</button>
-<mat-sidenav-container class="sidenav-container" >
-  <div class="scrolling-content">
-    <app-content></app-content>
-  </div>
-  <mat-sidenav #sidenav mode="side" opened="true" >
- 
-    <div class="scrolling-content" >
-      <app-sidebar [@slideInOut]="menuState"></app-sidebar>
+<!-- <mat-sidenav-container class="sidenav-container"> -->
+<app-header></app-header>
+<mat-sidenav #sidenav mode="side" opened="true">
+    <div class="scrolling-content">
+        <app-sidebar></app-sidebar>
     </div>
-  </mat-sidenav>
-</mat-sidenav-container>
+</mat-sidenav>
+<div class="scrolling-content">
+    <app-content></app-content>
+</div>
+<!-- </mat-sidenav-container> -->

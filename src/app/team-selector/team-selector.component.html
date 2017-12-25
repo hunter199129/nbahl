@@ -1,13 +1,9 @@
 <form class="team-selector-form">
   <mat-form-field class="team-selector-full-width">
-    <input matInput #input placeholder="Team" aria-label="Team" [matAutocomplete]="auto" [formControl]="teamCtrl" [(ngModel)]="selectedTeamName">
-    <button mat-button *ngIf="selectedTeamName" matSuffix mat-icon-button aria-label="Clear" (click)="clearInput($event)">
-      <mat-icon>close</mat-icon>
-    </button>
+    <input matInput placeholder="Team" aria-label="Team" [matAutocomplete]="auto" [formControl]="teamCtrl" [(ngModel)]="selectedTeamName">
     <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectChange($event)">
       <mat-option *ngFor="let team of filteredTeams | async" [value]="team.teamName">
-        <span>{{ team.abbreviation }}</span> |
-        <small>{{ team.teamName }}</small>
+        <span>{{ team.abbreviation }}</span> | <small>{{ team.teamName }}</small>
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>

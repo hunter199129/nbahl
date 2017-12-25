@@ -19,7 +19,7 @@ export class TeamSelectorServices {
     }
 
     getTeamFromJSON(): Observable<any> {
-        return this.http.get('./assets/data/teams.json')
+        return this.http.get('/assets/data/teams.json')
             .map((res: any) => res.json())
             .catch((error: any) => {
                 console.log(error);

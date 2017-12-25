@@ -1,58 +1,64 @@
-<i class="material-icons">local_airport</i>
-<i class="material-icons">home</i>
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <ul class="list-group">
+        <div class="nested-menu" *ngFor="let i of index">
+            <a class="list-group-item" (click)="addExpandClass('pages')">
+                <span><i class="fa fa-plus">{{matches.VisitorAbbreviation[i]}} {{matches.VisitorPoints[i]}} : {{matches.HomePoints[i]}} {{matches.HomeAbbreviation[i]}} &nbsp;{{matches.status[i]}} {{matches.livePcTime[i]}}<br></i>&nbsp;</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'pages'">
+                <ul class="submenu">
+                    <mat-list>
+                        <mat-card>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <th *ngFor="let j of fourElements">
+                                            Q{{j+1}}
+                                        </th>
+                                        <div *ngFor="let k of tenElements">
+                                            <th *ngIf="matches.HomeOts[i][k] !== 0">
+                                                OT{{k}}
+                                            </th>
+                                        </div>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            {{matches.HomeAbbreviation[i]}}
+                                        </td>
+                                        <td *ngFor="let j of fourElements">
+                                            {{matches.HomeQts[i][j]}}
+                                        </td>
+                                        <div *ngFor="let k of tenElements">
+                                            <td *ngIf="matches.HomeOts[i][k] !== 0">
+                                                {{matches.HomeOts[i][k]}}
+                                            </td>
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            {{matches.VisitorAbbreviation[i]}}
+                                        </td>
+                                        <td *ngFor="let j of fourElements">
+                                            {{matches.VisitorQts[i][j]}}
+                                        </td>
+                                        <div *ngFor="let k of tenElements">
+                                            <td *ngIf="matches.VisitorOts[i][k] !== 0">
+                                                {{matches.VisitorOts[i][k]}}
+                                            </td>
+                                        </div>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </mat-card>
+                    </mat-list>
+                    <br>
 
-<div *ngFor="let i of index">
-  
-  <mat-list>
-    <mat-card>
-      <span [ngStyle]="{'background-color': matches.VisitorColor[i], 'color': 'white'}">{{matches.VisitorAbbreviation[i]}}</span> 
-      <span>{{matches.VisitorPoints[i]}}
-      : 
-      {{matches.HomePoints[i]}} </span>
-      <span [ngStyle]="{'background-color': matches.HomeColor[i], 'color': 'white'}">{{matches.HomeAbbreviation[i]}}</span>
-      <br> {{matches.status[i]}} {{matches.livePcTime[i]}}
-      <br>
-      
-      <table>
-        <tr>
-          <td></td>
-          <td *ngFor="let j of fourElements">
-            Q{{j+1}}
-          </td>
-          <div *ngFor="let k of tenElements">
-            <td *ngIf="matches.HomeOts[i][k] !== 0 && matches.HomeOts[i][k] !== undefined">
-              OT{{k}}
-            </td>
-          </div>
-        </tr>
-        <tr>
-          <td>
-            {{matches.HomeAbbreviation[i]}}
-          </td>
-          <td *ngFor="let j of fourElements">
-            {{matches.HomeQts[i][j]}}
-          </td>
-          <div *ngFor="let k of tenElements">
-            <td *ngIf="matches.HomeOts[i][k] !== 0 && matches.HomeOts[i][k] !== undefined">
-              {{matches.HomeOts[i][k]}}
-            </td>
-          </div>
-        </tr>
-        <tr>
-          <td>
-            {{matches.VisitorAbbreviation[i]}}
-          </td>
-          <td *ngFor="let j of fourElements">
-            {{matches.VisitorQts[i][j]}}
-          </td>
-          <div *ngFor="let k of tenElements">
-            <td *ngIf="matches.VisitorOts[i][k] !== 0 && matches.VisitorOts[i][k] !== undefined">
-              {{matches.VisitorOts[i][k]}}
-            </td>
-          </div>
-        </tr>
-      </table>
-    </mat-card>
-  </mat-list>
-  <br>
-</div>
+
+                </ul>
+            </li>
+        </div>
+
+    </ul>
+</nav>

@@ -1,4 +1,4 @@
-import { Component, forwardRef, ViewChild, ElementRef } from '@angular/core';
+import { Component, forwardRef } from '@angular/core';
 import { FormControl, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { TeamSelectorServices } from './team-selector.service';
@@ -24,7 +24,6 @@ export class TeamSelectorComponent implements ControlValueAccessor {
 
   teamCtrl: FormControl = new FormControl;
   filteredTeams: Observable<any[]>;
-  @ViewChild('input') el: ElementRef;
 
   teams: any[];
   selectedTeamName: string;
@@ -56,11 +55,5 @@ export class TeamSelectorComponent implements ControlValueAccessor {
 
   selectChange(event) {
     this.propagateChange(event.option.value);
-  }
-
-  clearInput(event) {
-    event.stopPropagation();
-    this.selectedTeamName='';
-    this.el.nativeElement.focus();
   }
 }
