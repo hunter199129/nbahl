@@ -18,13 +18,11 @@ export class ChannelSelectorComponent implements OnInit, ControlValueAccessor {
 
   constructor(private googleSheetService: GoogleSheetService) { }
   key: string;
-  url: string;
   channels: any[];
   selelctedChannel: any;
 
   ngOnInit() {
     this.key = '1ciuaaaKk7RpvVnu8csK_i3kv2EVHxG_YSGNcI7WZHDs';
-    this.url = 'https://docs.google.com/spreadsheets/d/1ciuaaaKk7RpvVnu8csK_i3kv2EVHxG_YSGNcI7WZHDs';
     this.googleSheetService.load(this.key)
       .then(channels => this.channels = channels);
   }
