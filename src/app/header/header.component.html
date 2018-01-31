@@ -1,4 +1,4 @@
-<div class="pos-f-t fixed-top header">
+<!-- <div class="pos-f-t fixed-top header">
     <nav class="navbar  navbar-toggleable-md">
 
         <a class="navbar-brand">Highlight</a>
@@ -10,4 +10,11 @@
             </ul>
         </div>
     </nav>
-</div>
+</div> -->
+
+<mat-toolbar class="header">NBA Highlights Searcher
+    <app-standings matTooltip="Standings"></app-standings>
+    <a href={{url}} target="blank" mat-button matTooltip="Manage Channels">
+        <mat-icon>settings</mat-icon>
+    </a>
+</mat-toolbar>

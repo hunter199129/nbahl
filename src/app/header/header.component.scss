@@ -1,57 +1,58 @@
 $topnav-background-color: #222;
-.topnav {
-    border-radius: 0;
-    background-color: $topnav-background-color;
-    z-index: 2;
-    .text-center {
-        text-align: center;
-        padding-left: 1px;
-        cursor: pointer;
-    }
-    .top-right-nav {
-        .dropdown-menu {
-            top: 30px;
-            right: -2px;
-            left: auto;
-        }
-    }
-}
+// .topnav {
+//     border-radius: 0;
+//     background-color: $topnav-background-color;
+//     z-index: 2;
+//     .text-center {
+//         text-align: center;
+//         padding-left: 1px;
+//         cursor: pointer;
+//     }
+//     .top-right-nav {
+//         .dropdown-menu {
+//             top: 30px;
+//             right: -2px;
+//             left: auto;
+//         }
+//     }
+// }
 
-.navbar-brand {
-    font-size: 50px;
-    font-weight: 300;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #FFFFFF;
-    padding: 2px;
-    z-index: inherit 2;
-    ;
-}
+// .navbar-brand {
+//     font-size: 50px;
+//     font-weight: 300;
+//     font-family: Arial, Helvetica, sans-serif;
+//     color: #FFFFFF;
+//     padding: 2px;
+//     z-index: inherit 2;
+//     ;
+// }
 
-.messages {
-    width: 300px;
-    .media {
-        border-bottom: 1px solid #DDD;
-        padding: 5px 10px;
-        &:last-child {
-            border-bottom: none;
-        }
-    }
-    .media-body {
-        h5 {
-            font-size: 13px;
-            font-weight: 600;
-        }
-        .small {
-            margin: 0;
-        }
-        .last {
-            font-size: 12px;
-            margin: 0;
-        }
-    }
-}
+// .messages {
+//     width: 300px;
+//     .media {
+//         border-bottom: 1px solid #DDD;
+//         padding: 5px 10px;
+//         &:last-child {
+//             border-bottom: none;
+//         }
+//     }
+//     .media-body {
+//         h5 {
+//             font-size: 13px;
+//             font-weight: 600;
+//         }
+//         .small {
+//             margin: 0;
+//         }
+//         .last {
+//             font-size: 12px;
+//             margin: 0;
+//         }
+//     }
+// }
 
 .header {
     background: $topnav-background-color !important;
+    color: chartreuse;
     margin: 0;
 }

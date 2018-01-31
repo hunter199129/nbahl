@@ -1,24 +1,22 @@
 <section class="main-container ">
-    <!-- <pre>{{ form.value | json }}</pre> -->
+  <!-- <pre>{{ form.value | json }}</pre> -->
 
-    <div class="form-style">
-        <form [formGroup]="form" (ngSubmit)="submit(form.value)">
-            <app-team-selector formControlName="teamSelector" [(ngModel)]="selectedTeamName" class="select"></app-team-selector>
-            <app-channel-selector formControlName="channelSelector" [(ngModel)]="selectedChannel" class="select"></app-channel-selector>
-            <button type="submit" mat-button>
-    Search
-    <mat-icon >search</mat-icon>
-  </button>
-        </form>
-    </div>
-    <app-youtube-player [vid]="videoId"></app-youtube-player>
+  <div class="form-style">
+    <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+      <app-team-selector formControlName="teamSelector" [(ngModel)]="selectedTeamName" class="select"></app-team-selector>
+      <app-channel-selector formControlName="channelSelector" [(ngModel)]="selectedChannel" class="select"></app-channel-selector>
+      <button type="submit" mat-button matTooltip="Search">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+  </div>
+  <app-youtube-player [vid]="videoId"></app-youtube-player>
 
-    <ul>
-        <li *ngFor="let video of results" (click)="changeVideo(video.id.videoId)" class="list">
-            {{ video.snippet.title }}
-            <!-- <img [src]="video.snippet.thumbnails.default.url"/> -->
-        </li>
-    </ul>
+  <ul>
+    <li *ngFor="let video of results" (click)="changeVideo(video.id.videoId)" class="list">
+      {{ video.snippet.title }}
+      <!-- <img [src]="video.snippet.thumbnails.default.url"/> -->
+    </li>
+  </ul>
 
-    <app-standings></app-standings>
 </section>
