@@ -57,10 +57,13 @@ export class SidebarComponent {
           return t;
         });
 
-        this.index = this.matches.status.map((e, i) => i);
+        // Data from api fail sometimes, e.g. # of games is 8, but # of status is 9
+        const min = Math.min(this.matches.status.length, this.matches.HomeOts.length);
+        this.index = Array.from(new Array(min), (val, index) => index);
+
         this.tenElements = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
         this.fourElements = this.tenElements.slice(0, 4);
-        // console.log(games);
+        console.log(this.matches);
       });
   }
 }
